@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+:root { --pink:#f3a9bd; --deep:#92566b; --ink:#59434b; --cream:#fffaf7; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; min-height:100vh; color:var(--ink);
+  font-family:'Noto Sans TC','Microsoft JhengHei',sans-serif;
+  background:radial-gradient(circle at 10% 10%,#fff 0 5%,transparent 28%),
+             linear-gradient(135deg,#fff3f5,#fff8ec 55%,#f4f0ff);
+}
+.site-header { text-align:center; padding:42px 16px 22px; }
+.eyebrow { margin:0 0 8px; color:#c78399; letter-spacing:4px; font-size:11px; font-weight:700; }
+h1 { margin:0; font-size:clamp(32px,7vw,48px); color:#85546a; letter-spacing:2px; }
+h1 span { color:#e99bb2; padding:0 7px; }
+.subtitle { margin:8px 0 0; color:#987b83; }
+main { width:min(920px,92%); margin:0 auto 42px; }
+.intro-card,.interaction-card { background:rgba(255,255,255,.88); border:1px solid #f5dce3; border-radius:28px; box-shadow:0 14px 38px rgba(145,91,112,.10); }
+.intro-card { padding:22px; text-align:center; }
+.photo-wrap { position:relative; width:min(100%,590px); margin:0 auto; overflow:hidden; border-radius:22px; background:#f8e9ed; box-shadow:0 8px 24px rgba(106,69,82,.14); }
+.couple-photo { display:block; width:100%; height:auto; }
+.photo-sticker { position:absolute; color:#fff; text-shadow:0 2px 9px #e77e9e; font-size:clamp(30px,6vw,48px); animation:float 2.8s ease-in-out infinite; }
+.sticker-one { top:12px; right:18px; }.sticker-two { bottom:12px; left:18px; animation-delay:.7s; }
+.names { display:flex; justify-content:center; align-items:center; gap:clamp(14px,5vw,42px); margin:22px 0 10px; }
+.person { display:flex; align-items:center; gap:10px; text-align:left; }
+.avatar { display:grid; place-items:center; width:45px; height:45px; border-radius:50%; color:white; font-weight:900; font-size:20px; box-shadow:0 4px 10px #00000012; }
+.boy { background:linear-gradient(140deg,#91b8df,#658bbd); }.girl { background:linear-gradient(140deg,#f2b0c5,#d987a6); }
+.person strong { display:block; font-size:18px; }.person small { display:block; color:#a58c94; font-size:12px; }
+.heart-divider { color:#e99ab1; font-size:23px; }
+.intro-text { margin:12px 0 2px; color:#987b83; }
+.interaction-card { margin-top:22px; padding:25px; }
+.section-heading { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.section-heading>span { display:grid; place-items:center; width:42px; height:42px; border-radius:14px; background:#fff0f4; color:#d77f9a; font-size:24px; }
+h2 { margin:0; font-size:21px; color:#805466; }.section-heading p { margin:3px 0 0; color:#a58c94; font-size:13px; }
+.actions { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.action-btn { border:1px solid #f2d7df; border-radius:18px; padding:16px 8px; background:#fff9fa; color:#765461; cursor:pointer; font:inherit; transition:transform .18s,box-shadow .18s,background .18s; }
+.action-btn span { display:block; font-size:30px; margin-bottom:7px; }.action-btn b { font-size:14px; }
+.action-btn:hover { transform:translateY(-4px); background:#fff0f4; box-shadow:0 8px 18px #d99bad30; }.action-btn:active { transform:scale(.97); }
+.result { min-height:76px; margin-top:18px; padding:15px; border-radius:17px; display:flex; justify-content:center; align-items:center; gap:10px; text-align:center; background:#fff4f6; color:#875d6c; }
+.result p { margin:0; line-height:1.7; }.result-icon { font-size:25px; }
+.result.pop { animation:pop .35s ease; }
+footer { padding:10px 16px 28px; text-align:center; color:#ad8b96; font-size:12px; }
+.floating-heart { position:fixed; z-index:5; pointer-events:none; font-size:24px; animation:rise 1.25s ease-out forwards; }
+@keyframes float { 0%,100%{ transform:translateY(0) rotate(-5deg); } 50%{ transform:translateY(-8px) rotate(5deg); } }
+@keyframes pop { 0%{transform:scale(.97);opacity:.5} 100%{transform:scale(1);opacity:1} }
+@keyframes rise { 0%{transform:translateY(0) scale(.7);opacity:0} 20%{opacity:1} 100%{transform:translateY(-125px) scale(1.35);opacity:0} }
+@media(max-width:650px) { .site-header{padding-top:30px}.intro-card,.interaction-card{padding:16px;border-radius:22px}.actions{grid-template-columns:repeat(2,1fr)}.names{gap:14px}.person{gap:7px}.avatar{width:39px;height:39px}.person strong{font-size:16px} }
+
+
+/* 互動累積值 */
+.bond-panel{margin-top:18px;padding:17px 18px;border:1px solid #f2d7df;border-radius:18px;background:linear-gradient(135deg,#fff8fa,#fffaf2)}
+.bond-label{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#805466}
+.bond-label span{color:#c27691;font-weight:900;font-variant-numeric:tabular-nums}
+.bond-track{height:13px;margin-top:11px;overflow:hidden;border-radius:99px;background:#f3e2e8}
+.bond-fill{width:0%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#f4b2c5,#d88ab0,#b99bdc);transition:width .45s ease}
+.bond-hint{margin:9px 0 0;color:#a58c94;font-size:12px}
+.bonus-btn{margin-top:13px;padding:10px 16px;border:0;border-radius:999px;background:linear-gradient(120deg,#e99bb2,#b99bdc);color:white;font:inherit;font-weight:700;cursor:pointer;box-shadow:0 5px 14px #d99bad35}
+.bonus-btn:hover{transform:translateY(-2px)}
+.photo-wrap.milestone{animation:milestoneBounce .85s ease-in-out 2;box-shadow:0 0 0 5px #ffe1eb,0 0 35px #ed9fbd99}
+.photo-wrap.milestone::after{content:"SPECIAL!";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);padding:8px 17px;border:2px solid white;border-radius:999px;background:#e88eacdf;color:white;font-weight:900;letter-spacing:2px;text-shadow:0 1px 3px #9b5870;animation:specialStamp .7s ease both;pointer-events:none}
+.photo-wrap.milestone .couple-photo{animation:photoGlow 1.5s ease-in-out 2}
+@keyframes milestoneBounce{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.035) rotate(-1deg)}55%{transform:scale(1.035) rotate(1deg)}}
+@keyframes photoGlow{0%,100%{filter:brightness(1) saturate(1)}50%{filter:brightness(1.12) saturate(1.2)}}
+@keyframes specialStamp{0%{opacity:0;scale:.4}70%{opacity:1;scale:1.12}100%{opacity:1;scale:1}}
+@media(prefers-reduced-motion:reduce){.photo-wrap.milestone,.photo-wrap.milestone::after,.photo-wrap.milestone .couple-photo{animation:none}}
+
+
+/* 10 點解鎖：可愛動漫親親特效 */
+.photo-wrap.kiss-moment::before {
+  content: "啾！ 💋";
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(.2) rotate(-9deg);
+  padding: 12px 23px;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7a8c0, #d99bd7);
+  color: #fff;
+  font-size: clamp(25px, 6vw, 42px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-shadow: 0 2px 5px #a45b7a;
+  box-shadow: 0 8px 28px #d879a566;
+  animation: kissPop 1.65s cubic-bezier(.2,.9,.25,1.2) both;
+  pointer-events: none;
+}
+@keyframes kissPop {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.2) rotate(-15deg); }
+  22% { opacity: 1; transform: translate(-50%, -50%) scale(1.18) rotate(7deg); }
+  38% { transform: translate(-50%, -50%) scale(1) rotate(-5deg); }
+  78% { opacity: 1; transform: translate(-50%, -58%) scale(1) rotate(-5deg); }
+  100% { opacity: 0; transform: translate(-50%, -78%) scale(.85) rotate(-5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-wrap.kiss-moment::before { animation: none; opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+/* ===== 互動場景：打招呼與友善握手 ===== */
+.scene-stage {
+  position: relative;
+  margin-top: 18px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid #f2d7df;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #fff7fa, #fffaf0);
+  text-align: center;
+  animation: sceneAppear .38s ease both;
+}
+.scene-stage[hidden] { display: none; }
+.scene-stage img {
+  display: block;
+  width: min(100%, 560px);
+  max-height: 350px;
+  object-fit: cover;
+  object-position: center 35%;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px #b9788b22;
+}
+.scene-caption {
+  margin: 11px 0 2px;
+  color: #895d70;
+  font-weight: 700;
+}
+.scene-emoji {
+  min-height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 5vw, 45px);
+  font-size: clamp(48px, 10vw, 76px);
+}
+.scene-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #805466;
+  font-size: 14px;
+  font-weight: 800;
+}
+.scene-person .face {
+  display: inline-block;
+  animation: happyBob .8s ease-in-out infinite alternate;
+}
+.scene-person:last-child .face { animation-delay: .2s; }
+.handshake-symbol {
+  display: inline-block;
+  font-size: clamp(52px, 10vw, 76px);
+  animation: handshakeMove .75s ease-in-out 3;
+  transform-origin: center;
+}
+.scene-sparkle {
+  position: absolute;
+  font-size: 22px;
+  pointer-events: none;
+  animation: sceneTwinkle 1.1s ease-out forwards;
+}
+@keyframes sceneAppear {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes happyBob {
+  from { transform: translateY(2px) rotate(-4deg); }
+  to { transform: translateY(-8px) rotate(4deg); }
+}
+@keyframes handshakeMove {
+  0%,100% { transform: rotate(-7deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.12); }
+}
+@keyframes sceneTwinkle {
+  0% { opacity: 0; transform: translateY(8px) scale(.5); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-35px) scale(1.25); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-stage, .scene-person .face, .handshake-symbol, .scene-sparkle {
+    animation: none !important;
+  }
+}
+
+
+/* 每個互動使用不同的專屬插畫 */
+.scene-stage img {
+  width: min(100%, 620px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+  border-radius: 16px;
+  animation: actionImageIn .42s ease both;
+}
+.scene-stage.scene-wave img { box-shadow: 0 7px 24px #f0a8c455; }
+.scene-stage.scene-handshake img { box-shadow: 0 7px 24px #d5a1d455; }
+.scene-stage.scene-hug img { box-shadow: 0 7px 24px #efa3b655; }
+.scene-stage.scene-cheer img { box-shadow: 0 7px 24px #efc57b55; }
+@keyframes actionImageIn {
+  from { opacity: .25; transform: scale(.96) translateY(7px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-stage img { animation: none; }
+}

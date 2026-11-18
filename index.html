@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f5">
+  <title>彥辰 × 惠玲｜雙人互動小天地</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">OUR LITTLE CORNER</p>
+    <h1>彥辰 <span>×</span> 惠玲</h1>
+    <p class="subtitle">兩個角色的可愛互動小天地</p>
+  </header>
+
+  <main>
+    <section class="intro-card">
+      <div class="photo-wrap" id="photoWrap">
+        <img src="couple.png" alt="彥辰與惠玲的日式動漫風合照" class="couple-photo">
+        <span class="photo-sticker sticker-one">♡</span>
+        <span class="photo-sticker sticker-two">✦</span>
+      </div>
+      <div class="names">
+        <div class="person"><span class="avatar boy">彥</span><div><strong>彥辰</strong><small>男生角色</small></div></div>
+        <span class="heart-divider">♥</span>
+        <div class="person"><span class="avatar girl">惠</span><div><strong>惠玲</strong><small>女生角色</small></div></div>
+      </div>
+      <p class="intro-text">今天也來玩點可愛的小互動吧！</p>
+    </section>
+
+    <section class="interaction-card">
+      <div class="section-heading">
+        <span>✿</span>
+        <div><h2>選擇一個互動</h2><p>點選按鈕，看看會發生什麼事</p></div>
+      </div>
+      <div class="actions">
+        <button class="action-btn" data-action="wave"><span>👋</span><b>打招呼</b></button>
+        <button class="action-btn" data-action="handshake"><span>🤝</span><b>握手</b></button>
+        <button class="action-btn" data-action="hug"><span>🫂</span><b>友善擁抱</b></button>
+        <button class="action-btn" data-action="cheer"><span>✨</span><b>互相加油</b></button>
+      </div>
+      <div class="scene-stage" id="sceneStage" aria-live="polite" hidden>
+        <img id="sceneImage" src="" alt="" hidden>
+        <div class="scene-emoji" id="sceneEmoji" hidden></div>
+        <p class="scene-caption" id="sceneCaption"></p>
+      </div>
+      <div class="bond-panel">
+        <div class="bond-label"><strong>✨ 互動累積值</strong><span id="bondCount">0 / 10</span></div>
+        <div class="bond-track" role="progressbar" aria-label="互動累積值" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="bondProgress"><div class="bond-fill" id="bondFill"></div></div>
+        <p class="bond-hint" id="bondHint">每次互動累積 1 點，達到 10 點會解鎖特別動畫！</p>
+        <button class="bonus-btn" id="bonusBtn" type="button" hidden>🎉 再播放一次特別動畫</button>
+      </div>
+      <div class="result" id="result" aria-live="polite"><span class="result-icon">🌷</span><p>選一個上面的按鈕，開始互動吧！</p></div>
+    </section>
+  </main>
+
+  <footer>Made with ♡｜彥辰 × 惠玲</footer>
+  <script src="script.js"></script>
+</body>
+</html>
